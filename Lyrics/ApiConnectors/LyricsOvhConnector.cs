@@ -17,7 +17,7 @@ namespace Lyrics.ApiConnectors
         }
 
         // calls the lyrics api with restsharp, then returns full lyrics if found
-        public async Task<string> GetLyrics(string artist, string title)
+        public string GetLyrics(string artist, string title)
         {
             try
             {

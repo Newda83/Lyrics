@@ -32,11 +32,11 @@ namespace Lyrics.ApiConnectors
 
             foreach (var album in artist.Albums)
             {
-                foreach (var track in album.Tracks)
+                Parallel.ForEach(album.Tracks, track =>
                 {
-                    var lyrics = await LyricsConnector.GetLyrics(artist.Name, track.Name);
+                    var lyrics = LyricsConnector.GetLyrics(artist.Name, track.Name);
                     track.Lyrics = lyrics;
-                }
+                });
             }
             return artist;
         }
