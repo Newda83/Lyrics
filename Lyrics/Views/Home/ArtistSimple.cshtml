@@ -1,0 +1,15 @@
+﻿@model Lyrics.Models.ArtistSimpleModel
+
+@if (Model.FoundArtist)
+{
+    <div>
+        Artist Name: @Model.Name <br />
+        Average Number of Lyrics Per Track: @Model.AverageLyrics <br />
+    </div>
+}
+else
+{
+    <div>
+        Unable to find artist, please try again.
+    </div>
+}

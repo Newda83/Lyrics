@@ -1,6 +1,6 @@
 ﻿@model Lyrics.Models.ArtistModel
 
-@if (Model.FoundArtist == true)
+@if (Model.FoundArtist)
 {
     <div>
         Artist Name: @Model.Name <br />
@@ -12,7 +12,8 @@
         4. @Model.OrderedListOfLyrics[3].Lyric - @Model.OrderedListOfLyrics[3].Count occurences <br />
         5. @Model.OrderedListOfLyrics[4].Lyric - @Model.OrderedListOfLyrics[4].Count occurences <br />
     </div>
-} else
+}
+else
 {
     <div>
         Unable to find artist, please try again.

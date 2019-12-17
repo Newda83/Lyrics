@@ -23,6 +23,10 @@ namespace Lyrics.Objects
                     totalLyrics += track.GetNumberOfLyrics();
                 }
             }
+            if (totalTracks == 0)
+            {
+                return 0.0;
+            }
             return (double)totalLyrics / (double)totalTracks;
         }
 

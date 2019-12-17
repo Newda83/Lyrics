@@ -31,6 +31,14 @@ namespace Lyrics.Controllers
             return PartialView(model);
         }
 
+        // for ajax call
+        public async Task<IActionResult> ArtistSimple(string name)
+        {
+            var artist = await LastFm.GetArtistDetails(name);
+            var model = new ArtistSimpleModel(artist);
+            return PartialView(model);
+        }
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
