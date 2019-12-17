@@ -1,0 +1,21 @@
+﻿@model Lyrics.Models.ArtistModel
+
+@if (Model.FoundArtist == true)
+{
+    <div>
+        Artist Name: @Model.Name <br />
+        Average Number of Lyrics Per Track: @Model.AverageLyrics <br />
+        Most popular Lyrics: <br />
+        1. @Model.OrderedListOfLyrics[0].Lyric - @Model.OrderedListOfLyrics[0].Count occurences <br />
+        2. @Model.OrderedListOfLyrics[1].Lyric - @Model.OrderedListOfLyrics[1].Count occurences <br />
+        3. @Model.OrderedListOfLyrics[2].Lyric - @Model.OrderedListOfLyrics[2].Count occurences <br />
+        4. @Model.OrderedListOfLyrics[3].Lyric - @Model.OrderedListOfLyrics[3].Count occurences <br />
+        5. @Model.OrderedListOfLyrics[4].Lyric - @Model.OrderedListOfLyrics[4].Count occurences <br />
+    </div>
+} else
+{
+    <div>
+        Unable to find artist, please try again.
+    </div>
+}
+
